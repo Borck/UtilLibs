@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{517481C7-5B70-4A51-9B77-AFC25C9C25E1}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Util</RootNamespace>
+    <AssemblyName>SystemUtils</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="JetBrains.Annotations, Version=10.2.1.0, Culture=neutral, PublicKeyToken=1010a0d8d6380325, processorArchitecture=MSIL">
+      <HintPath>..\packages\JetBrains.Annotations.10.2.1\lib\net\JetBrains.Annotations.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PresentationFramework" />
+    <Reference Include="protobuf-net, Version=2.1.0.0, Culture=neutral, PublicKeyToken=257b51d87d2e4d67, processorArchitecture=MSIL">
+      <HintPath>..\packages\protobuf-net.2.1.0\lib\net451\protobuf-net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Collections\Arrayss.cs" />
+    <Compile Include="Collections\BiDictionary.cs" />
+    <Compile Include="Collections\CollectionExtensions.cs" />
+    <Compile Include="Collections\IndexedProperty.cs" />
+    <Compile Include="Collections\Lookup.cs" />
+    <Compile Include="Collections\LruMap.cs" />
+    <Compile Include="Collections\LruMapItem.cs" />
+    <Compile Include="Collections\MarshalX.cs" />
+    <Compile Include="Collections\ReadonlyIndexProperty.cs" />
+    <Compile Include="Collections\Ref.cs" />
+    <Compile Include="Concurrency\DelayedTask.cs" />
+    <Compile Include="System\Win\ProcessEx.cs" />
+    <Compile Include="System\Win\Registry\DispatcherExtensions.cs" />
+    <Compile Include="Concurrency\TaskQueue.cs" />
+    <Compile Include="System\Win\Environments.cs" />
+    <Compile Include="Exceptions\ExceptionExtensions.cs" />
+    <Compile Include="IO\FastDirectoryEnumerator.cs" />
+    <Compile Include="IO\Files.cs" />
+    <Compile Include="IO\FileSearchPattern.cs" />
+    <Compile Include="IO\Paths.cs" />
+    <Compile Include="IO\WIN32_FIND_DATA.cs" />
+    <Compile Include="Log\Log.cs" />
+    <Compile Include="Network\LocalPeer.cs" />
+    <Compile Include="Network\PeerProgram.cs" />
+    <Compile Include="Numerics\Mathh.cs" />
+    <Compile Include="Objects.cs" />
+    <Compile Include="Optional.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="IO\Serialization\CRC.cs" />
+    <Compile Include="IO\Serialization\GZipCompression.cs" />
+    <Compile Include="IO\Serialization\ISerializer.cs" />
+    <Compile Include="IO\Serialization\ProtoBufGZipCompression.cs" />
+    <Compile Include="IO\Serialization\ProtobufSerializer.cs" />
+    <Compile Include="IO\Serialization\ProtoBufZlibCompression.cs" />
+    <Compile Include="IO\Serialization\Serializer.cs" />
+    <Compile Include="IO\Serialization\ZlibCompression.cs" />
+    <Compile Include="Exceptions\SolvableException.cs" />
+    <Compile Include="Strings.cs" />
+    <Compile Include="System\Win\Registry\AppRegistration.cs" />
+    <Compile Include="System\Win\Shortcut.cs" />
+    <Compile Include="System\Win\Registry\RegistryMonitor.cs" />
+    <Compile Include="System\Win\Registry\Registry.cs" />
+    <Compile Include="System\Win\StartupMonitor.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="IWshRuntimeLibrary">
+      <Guid>{F935DC20-1CF0-11D0-ADB9-00C04FD58A0B}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Shell32">
+      <Guid>{50A7E9B0-70EF-11D1-B75A-00A0C90564FE}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
