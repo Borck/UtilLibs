@@ -199,17 +199,17 @@ namespace Util.System.Win.Registry {
     };
 
     private static readonly Dictionary<string, IntPtr> KeyPtrMap = new Dictionary<string, IntPtr> {
-      {Registry.HKCR, HkeyClassesRoot},
-      {Registry.HKCR2, HkeyClassesRoot},
-      {Registry.HKCU, HkeyCurrentUser},
-      {Registry.HKCU2, HkeyCurrentUser},
-      {Registry.HKLM, HkeyLocalMachine},
-      {Registry.HKLM2, HkeyLocalMachine},
-      {Registry.HKU, HkeyUsers},
-      {Registry.HKPD, HkeyPerformanceData},
-      {Registry.HKCC, HkeyCurrentConfig},
-      {Registry.HKDD, HkeyDynData},
-      {Registry.HKDD2, HkeyDynData}
+      {Registryy.HKCR, HkeyClassesRoot},
+      {Registryy.HKCR2, HkeyClassesRoot},
+      {Registryy.HKCU, HkeyCurrentUser},
+      {Registryy.HKCU2, HkeyCurrentUser},
+      {Registryy.HKLM, HkeyLocalMachine},
+      {Registryy.HKLM2, HkeyLocalMachine},
+      {Registryy.HKU, HkeyUsers},
+      {Registryy.HKPD, HkeyPerformanceData},
+      {Registryy.HKCC, HkeyCurrentConfig},
+      {Registryy.HKDD, HkeyDynData},
+      {Registryy.HKDD2, HkeyDynData}
     };
 
     #endregion

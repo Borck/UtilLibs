@@ -92,9 +92,10 @@
     <Compile Include="Exceptions\SolvableException.cs" />
     <Compile Include="Strings.cs" />
     <Compile Include="System\Win\Registry\AppRegistration.cs" />
+    <Compile Include="System\Win\Registry\RegistryValueTyped.cs" />
     <Compile Include="System\Win\Shortcut.cs" />
     <Compile Include="System\Win\Registry\RegistryMonitor.cs" />
-    <Compile Include="System\Win\Registry\Registry.cs" />
+    <Compile Include="System\Win\Registry\Registryy.cs" />
     <Compile Include="System\Win\StartupMonitor.cs" />
   </ItemGroup>
   <ItemGroup>

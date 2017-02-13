@@ -1,8 +1,8 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Util.IO.Serialization;
+using System;
 using Util.Numerics;
 
-namespace System {
+namespace Util.IO.Serialization {
   [TestClass]
   public class CompressionTest {
     private static void CheckSame(params int[][] dts) {

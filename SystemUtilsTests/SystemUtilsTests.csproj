@@ -60,6 +60,9 @@
     <Compile Include="IO\Serialization\CompressionTest.cs" />
     <Compile Include="Numerics\MathhTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StringsTests.cs" />
+    <Compile Include="System\Win\Registry\RegistryyTests.cs" />
+    <Compile Include="System\Win\Registry\RegistryValueTypedTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SystemUtils\SystemUtils.csproj">

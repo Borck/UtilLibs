@@ -1,0 +1,11 @@
+C:\Users\borck\Dropbox\Workspaces\Visual Studio\RegistryScript\UtilLibs\SystemUtils\bin\Debug\SystemUtils.dll
+C:\Users\borck\Dropbox\Workspaces\Visual Studio\RegistryScript\UtilLibs\SystemUtils\bin\Debug\SystemUtils.pdb
+C:\Users\borck\Dropbox\Workspaces\Visual Studio\RegistryScript\UtilLibs\SystemUtils\bin\Debug\JetBrains.Annotations.dll
+C:\Users\borck\Dropbox\Workspaces\Visual Studio\RegistryScript\UtilLibs\SystemUtils\bin\Debug\protobuf-net.dll
+C:\Users\borck\Dropbox\Workspaces\Visual Studio\RegistryScript\UtilLibs\SystemUtils\bin\Debug\JetBrains.Annotations.xml
+C:\Users\borck\Dropbox\Workspaces\Visual Studio\RegistryScript\UtilLibs\SystemUtils\obj\Debug\SystemUtils.csprojResolveAssemblyReference.cache
+C:\Users\borck\Dropbox\Workspaces\Visual Studio\RegistryScript\UtilLibs\SystemUtils\obj\Debug\Interop.IWshRuntimeLibrary.dll
+C:\Users\borck\Dropbox\Workspaces\Visual Studio\RegistryScript\UtilLibs\SystemUtils\obj\Debug\Interop.Shell32.dll
+C:\Users\borck\Dropbox\Workspaces\Visual Studio\RegistryScript\UtilLibs\SystemUtils\obj\Debug\SystemUtils.csproj.ResolveComReference.cache
+C:\Users\borck\Dropbox\Workspaces\Visual Studio\RegistryScript\UtilLibs\SystemUtils\obj\Debug\SystemUtils.dll
+C:\Users\borck\Dropbox\Workspaces\Visual Studio\RegistryScript\UtilLibs\SystemUtils\obj\Debug\SystemUtils.pdb
