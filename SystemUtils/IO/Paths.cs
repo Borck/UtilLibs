@@ -299,7 +299,7 @@ namespace Util.IO {
 
         Debug.Assert(filterMap.IsEmpty());
         Debug.Assert(searches.IsEmpty());
-        Objectt.Swap(ref filterMap, ref filterMapIn);
+        Objects.Swap(ref filterMap, ref filterMapIn);
       }
 
       return result;

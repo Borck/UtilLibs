@@ -2,7 +2,7 @@
 using System.Runtime.CompilerServices;
 
 namespace Util {
-  public static class Objectt {
+  public static class Objects {
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static void Swap<T>(ref T lhs, ref T rhs) {
       var temp = lhs;

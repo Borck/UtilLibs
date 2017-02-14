@@ -276,7 +276,7 @@ namespace Util.Collections {
       if (n!=otherArray.Length)
         return false;
       for (var i = 0; i<n; i++)
-        if (!Objectt.Equals(thisArray[i], otherArray[i]))
+        if (!Objects.Equals(thisArray[i], otherArray[i]))
           return false;
       return true;
     }

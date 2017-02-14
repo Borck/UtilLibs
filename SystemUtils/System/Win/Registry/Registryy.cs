@@ -120,6 +120,31 @@ namespace Util.System.Win.Registry {
         : baseKey.OpenSubKey(aRegKey);
     }
 
+
+
+    public static RegistryKey OpenParent(this RegistryKey registryKey) {
+      var pathToRegKey = registryKey.Name;
+      var lastSep = pathToRegKey.LastIndexOf('\\');
+      var pathToParent = pathToRegKey.Substring(0, lastSep);
+      return OpenRegistryKey(pathToParent);
+    }
+
+    public static string GetNameWithoutPath(this RegistryKey registryKey) {
+      var pathToRegKey = registryKey.Name;
+      var lastSep = pathToRegKey.LastIndexOf('\\');
+      return pathToRegKey.Substring(lastSep+1);
+    }
+
+
+    public static void Delete(this RegistryKey registryKey) {
+      using (var parent = registryKey.OpenParent()) {
+        var nameWithoutPath = registryKey.GetNameWithoutPath();
+
+        registryKey.Close();
+        parent.DeleteSubKeyTree(nameWithoutPath);
+      }
+    }
+
     /**
      * return the hive and writes the rest path back to regPath
      */
