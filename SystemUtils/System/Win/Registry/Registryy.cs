@@ -103,21 +103,25 @@ namespace Util.System.Win.Registry {
       return (RegistryValueKind)Enum.Parse(typeof(RegistryValueKind), regValueKindNameCamel);
     }
 
+    /// <summary>
+    /// Opens a RegistryKey from a path "<RegistryHive>\path\to\key". I.e. "HKEY_CURRENT_USER\Software\Microsoft"
+    /// </summary>
+    /// <param name="pathToKey"></param>
+    /// <param name="forceKey"></param>
+    /// <returns></returns>
+    public static Optional<RegistryKey> OpenRegistryKey(string pathToKey, bool forceKey = false) {
+      var registryKeyInfo = new RegistryKeyInfo(pathToKey);
+      return OpenRegistryKey(registryKeyInfo, forceKey);
+    }
 
-    public static RegistryKey OpenRegistryKey(string pathToKey, bool forceKey = false) {
-      var aKeyParts = pathToKey.Split(new[] { '\\' }, 2);
+    public static Optional<RegistryKey> OpenRegistryKey(RegistryKeyInfo registryKeyInfo, bool forceKey = false) {
 
-      if (aKeyParts.Length!=2) {
-        throw new ArgumentException("Try to open invalid registry key: "+pathToKey);
-      }
+      var baseKey = RegistryKey.OpenBaseKey(registryKeyInfo.Hive, RegistryView.Default);
+      var aRegKey = registryKeyInfo.PathToKey;
 
-      var registryHive = GetRegistryHive(aKeyParts[0]);
-      var baseKey = RegistryKey.OpenBaseKey(registryHive, RegistryView.Default);
-
-      var aRegKey = aKeyParts[1];
       return forceKey
-        ? baseKey.CreateSubKey(aRegKey)
-        : baseKey.OpenSubKey(aRegKey);
+        ? Optional<RegistryKey>.Of(baseKey.CreateSubKey(aRegKey))
+        : Optional<RegistryKey>.OfNullable(baseKey.OpenSubKey(aRegKey));
     }
 
 
@@ -126,7 +130,8 @@ namespace Util.System.Win.Registry {
       var pathToRegKey = registryKey.Name;
       var lastSep = pathToRegKey.LastIndexOf('\\');
       var pathToParent = pathToRegKey.Substring(0, lastSep);
-      return OpenRegistryKey(pathToParent);
+      var keyInfoParent = new RegistryKeyInfo(pathToParent);
+      return OpenRegistryKey(keyInfoParent).Value;
     }
 
     public static string GetNameWithoutPath(this RegistryKey registryKey) {

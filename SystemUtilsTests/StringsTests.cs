@@ -1,7 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Util {
-  [TestClass()]
+  [TestClass]
   public class StringsTests {
     public void ToCamelCaseFromSnakeCaseTest() {
       const string testSample = "A_TEST_SAMPLE";

@@ -3,37 +3,32 @@ using Microsoft.Win32;
 
 
 namespace Util.System.Win.Registry {
-  [TestClass()]
+  [TestClass]
   public class RegistryyTests {
 
-    [TestMethod()]
-    public void OpenRegistryKeyTest() {
-      const string pathToKey = @"HKEY_CURRENT_USER\Software";
-      var registryKey = Registryy.OpenRegistryKey(pathToKey);
-      Assert.AreEqual(pathToKey, registryKey.Name);
-    }
-
-    [TestMethod()]
+    [TestMethod]
     public void OpenParentKeyTest() {
       const string pathToParentKey = @"HKEY_CURRENT_USER\Software";
       const string pathToKey = pathToParentKey+@"\Microsoft";
 
-      var registryKey = Registryy.OpenRegistryKey(pathToKey);
+      var registryKey = Registryy.OpenRegistryKey(pathToKey).Value;
       var parentKey = registryKey.OpenParent();
 
       Assert.AreEqual(pathToParentKey, parentKey.Name);
     }
 
-    [TestMethod()]
+    [TestMethod]
     public void GetNameWithoutPathTest() {
       const string pathToKey = @"HKEY_CURRENT_USER\Software\Microsoft";
-      var registryKey = Registryy.OpenRegistryKey(pathToKey);
+
+
+      var registryKey = Registryy.OpenRegistryKey(pathToKey).Value;
 
       var nameWithoutPath = registryKey.GetNameWithoutPath();
       Assert.AreEqual("Microsoft", nameWithoutPath);
     }
 
-    [TestMethod()]
+    [TestMethod]
     public void GetRegistryHiveTest() {
       const string regHklm = "HKEY_LOCAL_MACHINE";
 
@@ -41,7 +36,7 @@ namespace Util.System.Win.Registry {
       Assert.AreEqual(RegistryHive.LocalMachine, registryHive);
     }
 
-    [TestMethod()]
+    [TestMethod]
     public void GetRegistryValueKindTest() {
       const string regBinary = "REG_BINARY";
 
